@@ -1,13 +1,13 @@
-###Assignment4
-###Getting and Cleaning Data Course Project
+# Assignment4
+# Getting and Cleaning Data Course Project
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set. 
 The goal is to prepare tidy data that can be used for later analysis.
 Below are the scripts used fo rth eproject
 
-##I started with loading the required packages
+# I started with loading the required packages
 library(dplyr)
 
-##Then downloaded the dataset
+# Then downloaded the dataset
 filename <- "Assignment4Dataset.zip"
 
 # Checking if archieve already exists.
@@ -21,7 +21,7 @@ if (!file.exists("UCI HAR Dataset")) {
   unzip(filename) 
 }
 
-##Then I assign all the data frames
+# Then I assign all the data frames
 features <- read.table("UCI HAR Dataset/features.txt", col.names = c("n","functions"))
 activities <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("code", "activity"))
 subject_test <- read.table("UCI HAR Dataset/test/subject_test.txt", col.names = "subject")
