@@ -5,6 +5,7 @@ The goal is to prepare tidy data that can be used for later analysis.
 Below are the scripts used fo rth eproject
 
 ### I started with loading the required packages
+<!-- -->
 library(dplyr)
 
 ### Then downloaded the dataset
@@ -47,13 +48,16 @@ Merged_Data <- cbind(Subject, Y, X)
 
 
 ## Extract only the measurements on the mean and standard deviation for each measurement.
+
 TidyData <- Merged_Data %>% select(subject, code, contains("mean"), contains("std"))
 
 ## Use descriptive activity names to name the activities in the data set.
+
 TidyData$code <- activities[TidyData$code, 2]
 
 
 ## Appropriately labels the data set with descriptive variable names.
+
 names(TidyData)[2] = "activity"
 names(TidyData)<-gsub("Acc", "Accelerometer", names(TidyData))
 names(TidyData)<-gsub("Gyro", "Gyroscope", names(TidyData))
